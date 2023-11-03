@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="whole-container">
+        <div class="navBar">
+            <div class="logo">
+                <img src="images/fuel.png" alt="fuel">
+            </div>
+            <div class="navTab">
+                <ul class="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#entry">Entry</a></li>
+                    <li><a href="#view">View</a></li>
+                    <li><a class="active" href="#calculate">Calculate</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pageContent">
+            <div class="homePagecontent">
+                <div class="page" id="home">
+                    <h2>Home</h2>
+                </div>
+            </div>
+            <div class="page" id="entry">
+                <div class="successMessage">
+                    <div class="circle">
+                        <img src="images/check.png" alt="check">
+                    </div>
+                    <div class="successtext">
+                        DATA SUCCESSFULLY ADDED
+                    </div>
+                </div>
+                <div class="entryPagecontent">
+                    <div class="formContainer">
+                        <div class="heading">
+                            <h2>Balance Fuel Tracker<h2>
+                        </div>
+                        <div class="form">
+                            <form id="fuelCalculator">
+                                <div class="formContent">
+                                    <div class="display">
+                                        <label for="currentFuelprice">Current Fuel Price</label>
+                                        <input type="text" inputmode="numeric" id="currentFuelprice" autocomplete="off"
+                                            placeholder="perliter" /><br />
+                                    </div>
+                                    <div class="display">
+                                        <label for="odometerReading">Odometer Reading </label>
+                                        <input type="text" inputmode="numeric" id="odometerReading" autocomplete="off"
+                                            placeholder="km" /><br />
+                                    </div>
+                                    <div class="display">
+                                        <label for="fuelAdded">Fuel Added </label>
+                                        <input type="text" inputmode="numeric" id="fuelAdded" autocomplete="off"
+                                            placeholder="rs" /><br />
+                                    </div>
+                                    <div class="display">
+                                        <label for="averageMileage">Average Mileage
+                                        </label>
+                                        <input type="text" inputmode="numeric" value="52" id="averageMileage"
+                                            autocomplete="off" placeholder="(km/liter)" /><br />
+                                    </div>
+                                </div>
+                                <div class="button">
+                                    <button type="submit">Add details</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page " id="view">
+                <div class="viewPagecontent">
+                    <!-- <h2>View</h2> -->
+                    <div class="main-content">
+                        <div class="table-container">
+                            <section class="fuelTabledetails show">
+                                <table id="basicfuelTable" align="center">
+                                    <tr>
+                                        <th>S.NO</th>
+                                        <th>Date</th>
+                                        <th>Day</th>
+                                        <th>Odometer</th>
+                                        <th>Current Fuel Price</th>
+                                        <th>Filled Fuel Price</th>
+                                        <th>Fuel</th>
+                                    </tr>
+                                </table>
+                                <span id="message">No data founded</span>
+                            </section>
+                            <section class="advanceFueltable">
+                                <table id="advancefuelTable" align="center">
+                                    <tr>
+                                        <th>S.NO</th>
+                                        <th>Date</th>
+                                        <th>Day</th>
+                                        <th>Odometer</th>
+                                        <th>Fuel</th>
+                                        <th>Balance Fuel</th>
+                                        <th>Average Mileage</th>
+                                        <th>Will Travel</th>
+                                    </tr>
+                                </table>
+                            </section>
+                            <div class="showMore">
+                                <input type="button" value="Show More">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calculatePagecontent">
+                <div class="page  page-active" id="calculate">
+                    <div class="formContainer">
+                        <div class="heading">
+                            <span class="title">
+                                <h2>Calculate current range</h2>
+                            </span>
+                            <span id="closeButton">X</span>
+                        </div>
+                        <div class="form">
+                            <form>
+                                <div class="formContent">
+                                    <label for="currentodo">Current Odometer Reading</label>
+                                    <input type="text" inputmode="numeric" id="currentodo" autocomplete="off"
+                                        placeholder="Km" /><br />
+                                </div>
+                                <div class="button">
+                                    <button type="submit">calculate</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="contentDetails">
+                        <!-- <div class="heading">
+                            <span>X</span>
+                        </div> -->
+                        <div class="balance">
+                            <span class="lable">Balance Fuel : </span>
+                            <span id="balanceFueldetail" class="result">2.00</span>
+                            <span class="symbol">L</span>
+                        </div>
+                        <div class="range">
+                            <span class="lable">Fuel range : </span>
+                            <span id="rangeDetail" class="result">104.00</span>
+                            <span class="symbol">Km</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
