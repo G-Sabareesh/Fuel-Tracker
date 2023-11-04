@@ -49,17 +49,17 @@
                                     <div class="display">
                                         <label for="currentFuelprice">Current Fuel Price</label>
                                         <input type="text" inputmode="numeric" id="currentFuelprice" autocomplete="off"
-                                            placeholder="perliter" /><br />
+                                            placeholder="perliter" required /><br />
                                     </div>
                                     <div class="display">
                                         <label for="odometerReading">Odometer Reading </label>
                                         <input type="text" inputmode="numeric" id="odometerReading" autocomplete="off"
-                                            placeholder="km" /><br />
+                                            placeholder="km" required /><br />
                                     </div>
                                     <div class="display">
                                         <label for="fuelAdded">Fuel Added </label>
                                         <input type="text" inputmode="numeric" id="fuelAdded" autocomplete="off"
-                                            placeholder="rs" /><br />
+                                            placeholder="rs" required /><br />
                                     </div>
                                     <div class="display">
                                         <label for="averageMileage">Average Mileage
@@ -118,6 +118,9 @@
             </div>
             <div class="calculatePagecontent">
                 <div class="page  page-active" id="calculate">
+                    <div class="nodata">
+                        <span id="nodata">No data found</span>
+                    </div>
                     <div class="formContainer">
                         <div class="heading">
                             <span class="title">
@@ -130,27 +133,27 @@
                                 <div class="formContent">
                                     <label for="currentodo">Current Odometer Reading</label>
                                     <input type="text" inputmode="numeric" id="currentodo" autocomplete="off"
-                                        placeholder="Km" /><br />
+                                        placeholder="Km" required /><br />
                                 </div>
                                 <div class="button">
                                     <button type="submit">calculate</button>
                                 </div>
                             </form>
                         </div>
-                    </div>
-                    <div class="contentDetails">
-                        <!-- <div class="heading">
-                            <span>X</span>
-                        </div> -->
-                        <div class="balance">
-                            <span class="lable">Balance Fuel : </span>
-                            <span id="balanceFueldetail" class="result">2.00</span>
-                            <span class="symbol">L</span>
-                        </div>
-                        <div class="range">
-                            <span class="lable">Fuel range : </span>
-                            <span id="rangeDetail" class="result">104.00</span>
-                            <span class="symbol">Km</span>
+                        <div class="contentDetails">
+                            <!-- <div class="heading">
+                                <span>X</span>
+                            </div> -->
+                            <div class="balance">
+                                <span class="lable">Balance Fuel : </span>
+                                <span id="balanceFueldetail" class="result">2.00</span>
+                                <span class="symbol">L</span>
+                            </div>
+                            <div class="range">
+                                <span class="lable">Fuel range : </span>
+                                <span id="rangeDetail" class="result">104.00</span>
+                                <span class="symbol">Km</span>
+                            </div>
                         </div>
                     </div>
                 </div>
