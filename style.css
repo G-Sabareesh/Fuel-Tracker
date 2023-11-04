@@ -8,6 +8,7 @@ body {
   width: 100%;
   height: 100vh;
   color: brown;
+  cursor: default;
   /* overflow: hidden; */
 }
 ::selection {
@@ -148,12 +149,18 @@ form button:focus,
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
   flex-direction: column;
   padding: 10px;
+}
+.entryPagecontent .formContainer {
+  border-radius: 5px;
+  background: rgba(245, 222, 179, 0.616);
+  padding: 10px;
+
   border: 2px solid brown;
 }
 .entryPagecontent .heading {
+  /* background: green; */
   width: 100%;
   text-align: center;
   border-radius: 10px;
@@ -162,9 +169,6 @@ form button:focus,
   padding: 10px;
   border-bottom: 2px solid maroon;
 }
-/* .formContainer {
-   background-color: green; 
-} */
 .entryPagecontent .form {
   display: flex;
   align-self: center;
@@ -236,7 +240,7 @@ form .button button:hover {
   padding: 10px;
   width: fit-content;
   height: fit-content;
-  border: 2px solid brown;
+  /* border: 2px solid brown; */
 }
 .main-content {
   /* background: blue; */
@@ -363,13 +367,20 @@ section table tr td button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
   flex-direction: column;
   /* padding: 10px; */
-  border: 2px solid brown;
+}
+.calculatePagecontent .nodata {
+  display: none;
+  font-size: x-large;
+  font-weight: bolder;
+  padding: 10px;
 }
 .calculatePagecontent .formContainer {
   background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid brown;
   /* margin: 5px; */
 }
 .calculatePagecontent .heading {
