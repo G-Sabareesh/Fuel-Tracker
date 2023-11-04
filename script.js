@@ -25,6 +25,10 @@ function addDetails(event) {
     tableCalculate(currentFuelprice, odometerReading, fuelAdded, averageMileage);
     entryForm.reset();
     dataSuccessmessage();
+    if (fuels.length === 1) {
+        formContainer.style.display = 'block';
+        document.querySelector('.nodata').style.display = 'none';
+    }
 }
 
 // this function exceute for the data success message
@@ -154,16 +158,25 @@ calculateForm.addEventListener('submit', calculateDetails);
 
 function calculateDetails(event) {
     event.preventDefault();
-    var previousFuel = fuels[fuels.length - 1].balanceFuel;
-    var previousOdo = fuels[fuels.length - 1].odometerReading;
     var currentodo = calculateForm.querySelector('#currentodo').value.trim();
-    var fuelConsumed = currentodo / fuels[fuels.length - 1].averageMileage;
-    var currentFuelBalance = previousFuel - fuelConsumed;
-    var currentFuelrange = currentFuelBalance * fuels[fuels.length - 1].averageMileage;
-    document.getElementById('#balanceFueldetail').innerText = currentFuelBalance;
-    document.getElementById('#rangeDetail').innerText = currentFuelrange;
-    closeButton.style.display = 'flex';
-    contentDetails.style.display = 'inline-flex';
+    console.log(currentodo);
+    if (fuels.length <= 0 || currentodo === '') {
+        document.querySelector('.nodata').style.display = 'flex';
+        formContainer.style.display = 'none';
+    }
+    else {
+        document.querySelector('.nodata').style.display = 'none';
+        var previousFuel = fuels[fuels.length - 1].balanceFuel;
+        var previousOdo = fuels[fuels.length - 1].odometerReading;
+        var fuelConsumed = (currentodo - previousOdo) / fuels[fuels.length - 1].averageMileage;
+        var currentFuelBalance = previousFuel - fuelConsumed;
+        var currentFuelrange = currentFuelBalance * fuels[fuels.length - 1].averageMileage;
+        document.getElementById('balanceFueldetail').innerText = currentFuelBalance.toFixed(2);
+        document.getElementById('rangeDetail').innerText = currentFuelrange.toFixed(2);
+        closeButton.style.display = 'flex';
+        contentDetails.style.display = 'inline-flex';
+    }
+
 }
 
 closeButton.addEventListener('click', closeContainer);
