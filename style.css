@@ -120,7 +120,7 @@ form button:focus,
 }
 /* CSS style to the home page */
 .pageContent .homePagecontent {
-  background-color: green;
+/*   background-color: green; */
 }
 /* CSS style to the entry page */
 .successMessage {
